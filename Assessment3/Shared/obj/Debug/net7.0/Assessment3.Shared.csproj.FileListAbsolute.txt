@@ -1,0 +1,12 @@
+D:\Assessment\AAT\Assessment3\Shared\bin\Debug\net7.0\Assessment3.Shared.deps.json
+D:\Assessment\AAT\Assessment3\Shared\bin\Debug\net7.0\Assessment3.Shared.dll
+D:\Assessment\AAT\Assessment3\Shared\bin\Debug\net7.0\Assessment3.Shared.pdb
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.csproj.AssemblyReference.cache
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.AssemblyInfoInputs.cache
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.AssemblyInfo.cs
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.csproj.CoreCompileInputs.cache
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.dll
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\refint\Assessment3.Shared.dll
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\Assessment3.Shared.pdb
+D:\Assessment\AAT\Assessment3\Shared\obj\Debug\net7.0\ref\Assessment3.Shared.dll

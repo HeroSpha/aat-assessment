@@ -1,0 +1,78 @@
+﻿@layout AuthenticationLayout
+@inherits BaseComponent
+@page "/login"
+
+@if (shouldRender)
+{
+    <div class="d-flex justify-content-center align-items-center vh-100 vw-100">
+        <div class="container">
+            <div class="card p-5 vw-25 bg-light shadow-lg rounded">
+                <p class="text-danger">@ErrorMessage.ToString()</p>
+                <!-- Your login form goes here -->
+                @if (IsRegistering)
+                {
+                    <h5>Register</h5>
+                    <hr />
+                    <EditForm Model="@RegisterModel" OnValidSubmit="HandleSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="mb-3">
+                            <p for="nameHelp" class="form-label"><b>Last name</b></p>
+                            <InputText type="text" class="form-control" id="nameHelp" @bind-Value="RegisterModel.FirstName" aria-describedby="nameHelp" />
+                            <ValidationMessage For="@(() => RegisterModel.FirstName)" />
+                        </div>
+                        <div class="mb-3">
+                            <p for="surnameHelp" class="form-label"><b>First name</b></p>
+                            <InputText type="text" class="form-control" id="surnameHelp" @bind-Value="RegisterModel.LastName" aria-describedby="nameHelp" />
+                            <ValidationMessage For="@(() => RegisterModel.LastName)" />
+                        </div>
+                        <div class="mb-3">
+                            <p for="emailHelp" class="form-label"><b>Email address</b></p>
+                            <InputText type="email" class="form-control" id="emailHelp" @bind-Value="RegisterModel.Email" aria-describedby="emailHelp" />
+                            <ValidationMessage For="@(() => RegisterModel.Email)" />
+                        </div>
+                        <div class="mb-3">
+                            <p for="passwordInput" class="form-label"><b>Password</b></p>
+                            <InputText type="password" class="form-control" id="passwordInput" @bind-Value="RegisterModel.Password" aria-describedby="passwordHelp" />
+                            <ValidationMessage For="@(() => RegisterModel.Password)" />
+                        </div>
+
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <p> Don't have accounte? <a role="button" class="link-primary" @onclick="SignIn">Login</a> </p>
+                        </div>
+                    </EditForm>
+                }
+                else
+                {
+                    <EditForm Model="@LoginModel" OnValidSubmit="Submit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="mb-3">
+                            <p for="emailHelp" class="form-label"><b>Email address</b></p>
+                            <InputText type="email" class="form-control" id="emailHelp" @bind-Value="LoginModel.Email" aria-describedby="emailHelp" />
+                            <ValidationMessage For="@(() => LoginModel.Email)" />
+                        </div>
+                        <div class="mb-3">
+                            <p for="passwordInput" class="form-label"><b>Password</b></p>
+                            <InputText type="password" class="form-control" id="passwordInput" @bind-Value="LoginModel.Password" aria-describedby="passwordHelp" />
+                            <ValidationMessage For="@(() => LoginModel.Password)" />
+                        </div>
+
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <p> Don't have accounte? <a role="button" class="link-primary" @onclick="Register">Register</a> </p>
+                        </div>
+                    </EditForm>
+                }
+
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <Spinner />
+}

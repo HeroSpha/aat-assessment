@@ -1,0 +1,28 @@
+﻿@using Assessment3.Shared.Models.Events
+<div class="col-md-3 col-lg-3 mb-2">
+    <a href="/events/detail/@Event.Id" @onclick="OnClick" class="link-no-style">
+        <div class="card">
+            <img class="img-thumbnail" src="@("data:image/jpeg;base64," + Event.Image)" alt="@Event.Title"/>
+            <div class="card-body">
+                <div class="card-title mb-2">
+                    <div class="d-flex justify-content-between">
+                        <h5>@Event.Title</h5>
+                        <p class="text-secondary">@Event.Date.ToShortDateString()</p>
+                    </div>
+                </div>
+               
+                <b>
+                    <p class="text-secondary">
+                        @Event.Venue
+                    </p>
+                </b>
+            </div>
+        </div>
+    </a>
+</div>
+
+@code {
+    [Parameter]
+    public required EventDto  Event { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+}

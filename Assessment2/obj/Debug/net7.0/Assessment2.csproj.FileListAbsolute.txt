@@ -1,0 +1,15 @@
+D:\Assessment\AAT\Assessment2\bin\Debug\net7.0\Assessment2.exe
+D:\Assessment\AAT\Assessment2\bin\Debug\net7.0\Assessment2.deps.json
+D:\Assessment\AAT\Assessment2\bin\Debug\net7.0\Assessment2.runtimeconfig.json
+D:\Assessment\AAT\Assessment2\bin\Debug\net7.0\Assessment2.dll
+D:\Assessment\AAT\Assessment2\bin\Debug\net7.0\Assessment2.pdb
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.csproj.AssemblyReference.cache
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.AssemblyInfoInputs.cache
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.AssemblyInfo.cs
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.csproj.CoreCompileInputs.cache
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.dll
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\refint\Assessment2.dll
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.pdb
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\Assessment2.genruntimeconfig.cache
+D:\Assessment\AAT\Assessment2\obj\Debug\net7.0\ref\Assessment2.dll

@@ -1,0 +1,15 @@
+﻿@using Blazored.Modal.Services
+
+<p>@Message</p>
+<div class="form-group m-3">
+    <button type="button" class="btn btn-danger" @onclick="Confirm" >Confirm</button>
+    <button  class="btn btn-secondary" @onclick="Close" >Close</button>
+</div>
+@code {
+
+    [Parameter]
+    public required string  Message { get; set; }
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    private async Task Close() => await BlazoredModal.CloseAsync(ModalResult.Cancel());
+    private async Task Confirm() => await BlazoredModal.CloseAsync(ModalResult.Ok());
+}

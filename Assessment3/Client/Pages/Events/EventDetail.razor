@@ -1,0 +1,58 @@
+﻿@inherits BaseComponent;
+@page "/events/detail/{Id}"
+
+@if (shouldRender)
+{
+    if (eventDto is not null)
+    {
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col">
+                    <h3>Event Details</h3>
+                    <hr/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img class="img-thumbnail" src="@("data:image/jpeg;base64," + eventDto.Image)" alt="@eventDto?.Title"/>
+                </div>
+                <div class="col-md-6">
+                    <h4>@eventDto?.Title</h4>
+                    <hr/>
+                    <div class="mb-4">@eventDto?.Venue</div>
+                    <div class="mb-4">@eventDto?.Description</div>
+                    <div class="mb-4">
+                        <h5>
+                            <b>@eventDto?.Seats.ToString() seats
+                            </b></h5>
+                    </div>
+                    <hr/>
+                    <div class="d-flex">
+                        <AuthorizeView Roles="Admin">
+                            <Authorized>
+                                <div class="input-group mb-3 add-group">
+                                    <button @onclick="Update" class="btn btn-success ms-2">Edit</button>
+                                    <button @onclick="Delete" class="btn btn-danger ms-2">Delete</button>
+                                </div>
+
+                            </Authorized>
+                        </AuthorizeView>
+                        <AuthorizeView Roles="User">
+                            <Authorized>
+                                <div class="input-group mb-3 add-group">
+                                    <button @onclick="Register" class="btn btn-primary">Register</button>
+                                </div>
+                            </Authorized>
+                        </AuthorizeView>
+                     <p class="text-danger">@ErrorMessage.ToString()</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+}
+else
+{
+    <Spinner />
+}

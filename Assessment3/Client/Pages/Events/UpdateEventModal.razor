@@ -1,0 +1,54 @@
+﻿@inherits BaseComponent
+
+<hr/>
+
+ @if (shouldRender)
+ {
+     <EditForm Model="@EventModel" OnValidSubmit="HandleSubmit">
+         <DataAnnotationsValidator />
+         <ValidationSummary />
+         <div class="form-group">
+             <label for="document"><b>Event Image</b> </label>
+             <InputFile OnChange="@LoadFiles"  accept=".png,.jpeg,.jpg" class="form-control" id="document" ></InputFile>
+         </div>
+         <div class="form-group my-2">
+          <img src="@Image" alt="document" height="250"/>
+         </div>
+         <div class="mb-3">
+             <p for="titleHelp" class="form-label"><b>Title</b></p>
+             <InputText type="text" class="form-control" id="titleHelp" @bind-Value="EventModel.Title" aria-describedby="titleHelp" />
+             <ValidationMessage For="@(() => EventModel.Title)" />
+         </div>
+         <div class="mb-3">
+             <p for="descriptionHelp" class="form-label"><b>Description</b></p>
+             <InputTextArea  class="form-control" id="descriptionHelp" @bind-Value="EventModel.Description" aria-describedby="descriptionHelp" />
+             <ValidationMessage For="@(() => EventModel.Description)" />
+         </div>
+         <div class="mb-3">
+             <p for="venueHelp" class="form-label"><b>Venue</b></p>
+             <InputText type="text" class="form-control" id="venueHelp" @bind-Value="EventModel.Venue" aria-describedby="venueHelp" />
+             <ValidationMessage For="@(() => EventModel.Venue)" />
+         </div>
+         <div class="mb-3">
+             <p for="passwordInput" class="form-label"><b>Date</b></p>
+             <InputDate class="form-control" id="channel-image"  @bind-Value="@EventModel.Date"></InputDate>
+             <ValidationMessage For="@(() => EventModel.Date)" />
+         </div>
+        
+         <div class="mb-3">
+             <p for="passwordInput" class="form-label"><b>Seats</b></p>
+             <InputNumber class="form-control" id="channel-image"  @bind-Value="@EventModel.Seats"></InputNumber>
+             <ValidationMessage For="@(() => EventModel.Seats)" />
+         </div>
+
+
+         <div class="form-group m-3">
+             <button type="submit" class="btn btn-primary" >Submit</button>
+             <button type="button" class="btn btn-secondary" @onclick="Close" >Close</button>
+         </div>
+     </EditForm>
+ }
+ else
+ {
+     <Spinner />
+ }

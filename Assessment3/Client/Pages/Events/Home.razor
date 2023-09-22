@@ -1,0 +1,46 @@
+﻿@layout MainLayout
+@inherits BaseComponent
+@page "/"
+
+@if (shouldRender)
+{
+    <div class="container-fluid">
+        <div class="d-flex">
+            <div class="me-auto">
+                <h5><b>Events -: @events?.Count() found</b></h5>
+            </div>
+            <div class="ms-auto">
+                <AuthorizeView Roles="Admin">
+                    <Authorized>
+                        <button class="btn btn-primary" @onclick="AddEventModalAsync">Add Event</button>
+                    </Authorized>
+                </AuthorizeView>
+           
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col">
+                <div class="container input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search events" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        @if (events.Any())
+        {
+            <div class="row mt-3">
+                @foreach (var ev in events)
+                {
+                    <EventCard Event="@ev" />
+                }
+            </div>
+        }
+    </div>
+}
+else
+{
+    <Spinner />
+}

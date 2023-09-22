@@ -1,0 +1,32 @@
+﻿<CascadingBlazoredModal>
+    <CascadingAuthenticationState>
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                <AuthorizeView>
+                    <Authorized>
+                        <!-- Authorized layout or content -->
+                        <LayoutView>
+                            <RouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)" />
+                        </LayoutView>
+                    </Authorized>
+                    <NotAuthorized>
+                        <!-- Display the login page for unauthorized users -->
+                        <AuthenticationLayout>
+                            <RouteView RouteData="@routeData" DefaultLayout="typeof(AuthenticationLayout)" />
+                        </AuthenticationLayout>
+                    </NotAuthorized>
+                    <Authorizing>
+                        <p>Loading</p>
+                    </Authorizing>
+                </AuthorizeView>
+                @* <FocusOnNavigate RouteData="@routeData" Selector="h1" />  *@
+            </Found>
+            <NotFound>
+                <PageTitle>Not found</PageTitle>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <p role="alert">Sorry, there's nothing at this address.</p>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </CascadingAuthenticationState>
+</CascadingBlazoredModal>

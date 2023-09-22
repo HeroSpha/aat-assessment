@@ -1,0 +1,6 @@
+Thread Synchronization - multi threads interact with a shared global list without proper synchronization can lead to race conditions.
+Stopping Criteria - Detemining when to stop and thread can be complex.
+Concurrency Control - Coordinating the execution of multiple threads with different tasks, especially when they depend on the state of the global list, requires careful design and coordination to prevent deadlocks or contention.
+Bottlenecks -  running multiple threads concurrently can lead to performance bottlenecks. 
+
+https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread?view=net-7.0

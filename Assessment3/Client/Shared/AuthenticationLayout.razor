@@ -1,0 +1,23 @@
+﻿@using Blazored.Toast.Configuration
+@inherits LayoutComponentBase
+
+<div>
+    @Body
+</div>
+<AuthorizeView>
+    <NotAuthorized>
+        <Login />
+    </NotAuthorized>
+</AuthorizeView>
+ <BlazoredToasts Position="ToastPosition.BottomRight"
+                        Timeout="10">
+            <CloseButtonContent>
+                <div>
+                    <span>&times;</span>
+                </div>
+            </CloseButtonContent>
+        </BlazoredToasts>
+@code {
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}
